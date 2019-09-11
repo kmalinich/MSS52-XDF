@@ -1,4 +1,4 @@
-<!-- Written 08/27/2019 08:40:27 -->
+<!-- Written 09/11/2019 09:37:44 -->
 <XDFFORMAT version="1.60">
   <XDFHEADER>
     <flags>0x1</flags>
@@ -679,6 +679,7 @@
     <XDFAXIS id="y" flags="0xC" uniqueid="0x0">
       <EMBEDDEDDATA mmedaddress="0x6076" mmedelementsizebits="16" mmedcolcount="6" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <indexcount>6</indexcount>
+      <decimalpl>3</decimalpl>
       <max>2.000000</max>
       <embedinfo type="1" />
       <datatype>0</datatype>
@@ -4557,7 +4558,7 @@
       <indexcount>5</indexcount>
       <decimalpl>1</decimalpl>
       <outputtype>2</outputtype>
-      <embedinfo type="1" />
+      <embedinfo type="3" linkobjid="0x6AD9" />
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
@@ -4571,7 +4572,7 @@
       <indexcount>5</indexcount>
       <decimalpl>1</decimalpl>
       <outputtype>2</outputtype>
-      <embedinfo type="1" />
+      <embedinfo type="3" linkobjid="0x1108" />
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
@@ -4587,6 +4588,101 @@
       <max>250.000000</max>
       <outputtype>2</outputtype>
       <MATH equation="x*10">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x6AD9" flags="0x30">
+    <title>Lambda, sensor, duty cycle (X-axis)</title>
+    <CATEGORYMEM index="0" category="35" />
+    <CATEGORYMEM index="1" category="91" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Column</units>
+      <indexcount>5</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="1" />
+      <LABEL index="1" value="2" />
+      <LABEL index="2" value="3" />
+      <LABEL index="3" value="4" />
+      <LABEL index="4" value="5" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>RPM</units>
+      <indexcount>1</indexcount>
+      <decimalpl>1</decimalpl>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x32F2" mmedelementsizebits="16" mmedrowcount="1" mmedcolcount="5" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>RPM</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>10000.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x1108" flags="0x30">
+    <title>Lambda, sensor, duty cycle (Y-axis)</title>
+    <CATEGORYMEM index="0" category="35" />
+    <CATEGORYMEM index="1" category="91" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>RF %</units>
+      <indexcount>1</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="1" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedelementsizebits="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Row</units>
+      <indexcount>5</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="1" />
+      <LABEL index="1" value="2" />
+      <LABEL index="2" value="3" />
+      <LABEL index="3" value="4" />
+      <LABEL index="4" value="5" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x32FC" mmedelementsizebits="16" mmedrowcount="5" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>RF %</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>100.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="x/10">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
@@ -6241,6 +6337,37 @@
       </MATH>
     </XDFAXIS>
   </XDFFUNCTION>
+  <XDFFUNCTION uniqueid="0x56FF" flags="0x0">
+    <title>Throttle, electronic, MAX_DIFF</title>
+    <description>KL_WDK_MAX_DIFF</description>
+    <CATEGORYMEM index="0" category="12" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x5DEA" mmedelementsizebits="16" mmedcolcount="3" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>%</units>
+      <indexcount>3</indexcount>
+      <decimalpl>1</decimalpl>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x/10">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x5DF0" mmedelementsizebits="16" mmedcolcount="3" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>%</units>
+      <indexcount>3</indexcount>
+      <decimalpl>1</decimalpl>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x/10">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFFUNCTION>
   <XDFTABLE uniqueid="0x5842" flags="0x30">
     <title>Throttle, electronic, angle, maximum</title>
     <description>KF_EGAS_MAX_WDK</description>
@@ -6638,6 +6765,55 @@
       </MATH>
     </XDFAXIS>
   </XDFFUNCTION>
+  <XDFFUNCTION uniqueid="0x58E8" flags="0x0">
+    <title>Throttle, electronic, duty cycle, full load</title>
+    <description>KL_EDK_VORST&#013;&#010;% duty cycle to overcome throttle body spring force</description>
+    <CATEGORYMEM index="0" category="12" />
+    <XDFAXIS id="x" flags="0xC" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x4086" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>TPS %</units>
+      <indexcount>10</indexcount>
+      <decimalpl>1</decimalpl>
+      <max>100.000000</max>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x/10">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" flags="0xC" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x409A" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>% duty cycle</units>
+      <indexcount>10</indexcount>
+      <decimalpl>1</decimalpl>
+      <max>100.000000</max>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x/20">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFFUNCTION>
+  <XDFCONSTANT uniqueid="0x176C" flags="0xC">
+    <title>Throttle, electronic, force/fuel delta, maximum</title>
+    <description>K_EGAS_MAXKRAFT_DELTA&#013;&#010;Translation confirmation needed</description>
+    <CATEGORYMEM index="0" category="12" />
+    <EMBEDDEDDATA mmedaddress="0x6342" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>%</units>
+    <decimalpl>1</decimalpl>
+    <rangehigh>100.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/10">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
   <XDFFUNCTION uniqueid="0x4DC1" flags="0x0">
     <title>Throttle, electronic, output map, comfort</title>
     <description>KL_PWG_SOLL_COMFORT</description>
@@ -6737,40 +6913,6 @@
       </MATH>
     </XDFAXIS>
   </XDFFUNCTION>
-  <XDFFUNCTION uniqueid="0x58E8" flags="0x0">
-    <title>Throttle, electronic, full load duty cycles</title>
-    <description>KL_EDK_VORST&#013;&#010;(%-duty cycles to overcome throttle body spring force)</description>
-    <CATEGORYMEM index="0" category="12" />
-    <XDFAXIS id="x" flags="0xC" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x4086" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>TPS %</units>
-      <indexcount>10</indexcount>
-      <decimalpl>1</decimalpl>
-      <max>100.000000</max>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="x/10">
-        <VAR id="x" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" flags="0xC" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x409A" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>% duty cycle</units>
-      <indexcount>10</indexcount>
-      <decimalpl>1</decimalpl>
-      <max>100.000000</max>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="x/20">
-        <VAR id="x" />
-      </MATH>
-    </XDFAXIS>
-  </XDFFUNCTION>
   <XDFCONSTANT uniqueid="0x78F5" flags="0xC">
     <title>Throttle, electronic, voltage, minimum</title>
     <description>K_EGAS_UBMIN&#013;&#010;Minimum battery voltage for electronic throttle pedal operation</description>
@@ -6779,51 +6921,6 @@
     <units>volts</units>
     <decimalpl>1</decimalpl>
     <rangehigh>16.000000</rangehigh>
-    <datatype>0</datatype>
-    <unittype>0</unittype>
-    <DALINK index="0" />
-    <MATH equation="x/10">
-      <VAR id="x" />
-    </MATH>
-  </XDFCONSTANT>
-  <XDFFUNCTION uniqueid="0x56FF" flags="0x0">
-    <title>Throttle, electronic, MAX_DIFF</title>
-    <description>KL_WDK_MAX_DIFF</description>
-    <CATEGORYMEM index="0" category="12" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5DEA" mmedelementsizebits="16" mmedcolcount="3" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>%</units>
-      <indexcount>3</indexcount>
-      <decimalpl>1</decimalpl>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="x/10">
-        <VAR id="x" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5DF0" mmedelementsizebits="16" mmedcolcount="3" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>%</units>
-      <indexcount>3</indexcount>
-      <decimalpl>1</decimalpl>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="x/10">
-        <VAR id="x" />
-      </MATH>
-    </XDFAXIS>
-  </XDFFUNCTION>
-  <XDFCONSTANT uniqueid="0x176C">
-    <title>Throttle, electronic, MAXKRAFT_DELTA</title>
-    <description>K_EGAS_MAXKRAFT_DELTA</description>
-    <CATEGORYMEM index="0" category="12" />
-    <EMBEDDEDDATA mmedaddress="0x6342" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
-    <units>%</units>
-    <rangehigh>100.000000</rangehigh>
     <datatype>0</datatype>
     <unittype>0</unittype>
     <DALINK index="0" />
