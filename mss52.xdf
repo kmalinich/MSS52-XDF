@@ -1,4 +1,4 @@
-<!-- Written 09/11/2019 09:37:44 -->
+<!-- Written 09/12/2019 09:51:37 -->
 <XDFFORMAT version="1.60">
   <XDFHEADER>
     <flags>0x1</flags>
@@ -739,7 +739,7 @@
     <datatype>0</datatype>
     <unittype>0</unittype>
     <DALINK index="0" />
-    <MATH equation="x*.6213711922">
+    <MATH equation="x*.6213711922373837">
       <VAR id="x" />
     </MATH>
   </XDFCONSTANT>
@@ -754,7 +754,7 @@
     <datatype>0</datatype>
     <unittype>0</unittype>
     <DALINK index="0" />
-    <MATH equation="x*.6213711922">
+    <MATH equation="x*.6213711922373837">
       <VAR id="x" />
     </MATH>
   </XDFCONSTANT>
@@ -5720,7 +5720,7 @@
     <datatype>0</datatype>
     <unittype>0</unittype>
     <DALINK index="0" />
-    <MATH equation="x*.6213711922">
+    <MATH equation="x*.6213711922373837">
       <VAR id="x" />
     </MATH>
   </XDFCONSTANT>
@@ -6134,7 +6134,7 @@
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
-      <MATH equation="x*.6213711922">
+      <MATH equation="x*.6213711922373837">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
@@ -6170,7 +6170,7 @@
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
-      <MATH equation="x*.6213711922">
+      <MATH equation="x*.6213711922373837">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
