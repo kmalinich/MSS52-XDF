@@ -7633,7 +7633,7 @@
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
-      <MATH equation="(x/16)*.6213711922">
+      <MATH equation="(x/16)*.6213711922373837">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
