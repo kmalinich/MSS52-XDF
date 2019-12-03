@@ -1,4 +1,4 @@
-<!-- Written 09/12/2019 09:51:37 -->
+<!-- Written 12/03/2019 09:39:19 -->
 <XDFFORMAT version="1.60">
   <XDFHEADER>
     <flags>0x1</flags>
@@ -2562,6 +2562,7 @@
       <units>RF %</units>
       <indexcount>8</indexcount>
       <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
       <embedinfo type="1" />
       <datatype>0</datatype>
       <unittype>0</unittype>
@@ -2650,13 +2651,14 @@
       <EMBEDDEDDATA mmedaddress="0xB24" mmedelementsizebits="16" mmedcolcount="3" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>RF %</units>
       <indexcount>3</indexcount>
+      <decimalpl>1</decimalpl>
       <min>1000.000000</min>
       <outputtype>2</outputtype>
       <embedinfo type="1" />
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
-      <MATH equation="(x/1000)*100">
+      <MATH equation="x/10">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
@@ -2955,7 +2957,7 @@
       </MATH>
     </XDFAXIS>
   </XDFFUNCTION>
-  <XDFTABLE uniqueid="0x4E4D" flags="0x0">
+  <XDFTABLE uniqueid="0x4E4D" flags="0x30">
     <title>Fuel, injection, secondary air, M</title>
     <description>KF_TI_N_RF_SLP_M</description>
     <CATEGORYMEM index="0" category="22" />
@@ -2964,6 +2966,7 @@
       <EMBEDDEDDATA mmedaddress="0xA3C" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>RPM</units>
       <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
       <outputtype>2</outputtype>
       <embedinfo type="1" />
       <datatype>0</datatype>
@@ -2975,22 +2978,23 @@
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
       <EMBEDDEDDATA mmedaddress="0xA4C" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>-</units>
+      <units>RF %</units>
       <indexcount>8</indexcount>
-      <decimalpl>3</decimalpl>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
       <embedinfo type="1" />
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
-      <MATH equation="x/1000">
+      <MATH equation="x/10">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="z">
       <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0xA5C" mmedelementsizebits="8" mmedrowcount="8" mmedcolcount="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
       <decimalpl>2</decimalpl>
-      <min>-1.000000</min>
-      <max>0.000000</max>
+      <min>0.000000</min>
+      <max>1.000000</max>
       <outputtype>1</outputtype>
       <MATH equation="x/128">
         <VAR id="x" />
@@ -3443,16 +3447,15 @@
     </XDFAXIS>
     <XDFAXIS id="y" flags="0xC" uniqueid="0x0">
       <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x5546" mmedelementsizebits="16" mmedcolcount="4" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>gradient/10ms</units>
+      <units>delta/100ms</units>
       <indexcount>4</indexcount>
-      <decimalpl>1</decimalpl>
       <min>-100.000000</min>
-      <max>100.000000</max>
+      <max>0.000000</max>
       <embedinfo type="1" />
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
-      <MATH equation="x/160">
+      <MATH equation="x/16">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
@@ -3479,15 +3482,14 @@
     </XDFAXIS>
     <XDFAXIS id="y" flags="0xC" uniqueid="0x0">
       <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x5558" mmedelementsizebits="16" mmedcolcount="4" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>gradient/10ms</units>
+      <units>delta/100ms</units>
       <indexcount>4</indexcount>
-      <decimalpl>1</decimalpl>
       <max>100.000000</max>
       <embedinfo type="1" />
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
-      <MATH equation="x/160">
+      <MATH equation="x/16">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
