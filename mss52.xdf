@@ -126,7 +126,7 @@
     <CATEGORY index="0x73" name="Proportional" />
     <CATEGORY index="0x74" name="Integral" />
     <CATEGORY index="0x75" name="Derivitive" />
-    <CATEGORY index="0x12B" name="O2 sensor, " />
+    <CATEGORY index="0x12B" name="O2 sensor" />
   </XDFHEADER>
   <XDFCONSTANT uniqueid="0x6996" flags="0xC">
     <title>Alpha-N, air density</title>
