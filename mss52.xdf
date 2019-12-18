@@ -1,4 +1,4 @@
-<!-- Written 12/09/2019 09:54:36 -->
+<!-- Written 12/18/2019 17:24:19 -->
 <XDFFORMAT version="1.60">
   <XDFHEADER>
     <flags>0x1</flags>
@@ -116,6 +116,7 @@
     <CATEGORY index="0x68" name="Cycle 5" />
     <CATEGORY index="0x69" name="Voltage" />
     <CATEGORY index="0x6A" name="PID gain" />
+    <CATEGORY index="0x6B" name="OBD disable" />
     <CATEGORY index="0x6C" name="PWM" />
     <CATEGORY index="0x6D" name="MAF" />
     <CATEGORY index="0x6E" name="Air mass" />
@@ -2076,7 +2077,7 @@
       </MATH>
     </XDFAXIS>
   </XDFTABLE>
-  <XDFTABLE uniqueid="0x6E7F" flags="0x30">
+  <XDFTABLE uniqueid="0x6E7F" vislevel="2" flags="0x30">
     <title>Fuel cut, delay time, readiness (X-axis)</title>
     <CATEGORYMEM index="0" category="22" />
     <CATEGORYMEM index="1" category="71" />
@@ -2123,7 +2124,7 @@
       </MATH>
     </XDFAXIS>
   </XDFTABLE>
-  <XDFTABLE uniqueid="0x6E80" flags="0x30">
+  <XDFTABLE uniqueid="0x6E80" vislevel="2" flags="0x30">
     <title>Fuel cut, delay time, readiness (Y-axis)</title>
     <CATEGORYMEM index="0" category="22" />
     <CATEGORYMEM index="1" category="71" />
@@ -2538,7 +2539,7 @@
       </MATH>
     </XDFAXIS>
   </XDFTABLE>
-  <XDFTABLE uniqueid="0x3DF5" flags="0x30">
+  <XDFTABLE uniqueid="0x3DF5" vislevel="2" flags="0x30">
     <title>Fuel, injection, end angle (Y-axis)</title>
     <CATEGORYMEM index="0" category="22" />
     <CATEGORYMEM index="1" category="68" />
@@ -3145,10 +3146,10 @@
     <XDFAXIS id="z">
       <EMBEDDEDDATA mmedaddress="0x3062" mmedelementsizebits="16" mmedrowcount="4" mmedcolcount="4" mmedmajorstridebits="0" mmedminorstridebits="0" />
       <units>PWM %</units>
-      <decimalpl>1</decimalpl>
+      <decimalpl>2</decimalpl>
       <min>50.000000</min>
       <max>100.000000</max>
-      <outputtype>2</outputtype>
+      <outputtype>1</outputtype>
       <MATH equation="(x/1024)*100">
         <VAR id="x" />
       </MATH>
@@ -4641,7 +4642,7 @@
       </MATH>
     </XDFAXIS>
   </XDFTABLE>
-  <XDFTABLE uniqueid="0x6AD9" flags="0x30">
+  <XDFTABLE uniqueid="0x6AD9" vislevel="2" flags="0x30">
     <title>Lambda, sensor, duty cycle (X-axis)</title>
     <CATEGORYMEM index="0" category="35" />
     <CATEGORYMEM index="1" category="91" />
@@ -5995,18 +5996,20 @@
     </XDFAXIS>
   </XDFFUNCTION>
   <XDFFLAG uniqueid="0x6864">
-    <title>Sensor, O2, bank 1, controller enabled</title>
+    <title>Sensor, O2, control enablement, bank 1</title>
     <description>K_LA_FREIGABE bit 1</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="66" />
     <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x02</mask>
   </XDFFLAG>
   <XDFFLAG uniqueid="0xC58">
-    <title>Sensor, O2, bank 2, controller enabled</title>
+    <title>Sensor, O2, control enablement, bank 2</title>
     <description>K_LA_FREIGABE bit 2</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="66" />
     <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x04</mask>
   </XDFFLAG>
@@ -6015,6 +6018,7 @@
     <description>K_LA_OBD_FREIGABE bit 0</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="108" />
     <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x01</mask>
   </XDFFLAG>
@@ -6023,6 +6027,7 @@
     <description>K_LA_OBD_FREIGABE bit 1</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="108" />
     <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x02</mask>
   </XDFFLAG>
@@ -6031,6 +6036,7 @@
     <description>K_LA_OBD_FREIGABE bit 2</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="108" />
     <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x04</mask>
   </XDFFLAG>
@@ -6039,6 +6045,7 @@
     <description>K_LA_OBD_FREIGABE bit 3</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="108" />
     <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x08</mask>
   </XDFFLAG>
@@ -6047,6 +6054,7 @@
     <description>K_LA_OBD_FREIGABE bit 4</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="108" />
     <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x10</mask>
   </XDFFLAG>
@@ -6055,6 +6063,7 @@
     <description>K_LA_OBD_FREIGABE bit 6</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="108" />
     <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x40</mask>
   </XDFFLAG>
@@ -6063,6 +6072,7 @@
     <description>K_LA_OBD_FREIGABE bit 7</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="108" />
     <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x80</mask>
   </XDFFLAG>
@@ -6071,6 +6081,7 @@
     <description>K_LA_OBD_FREIGABE&#013;&#010;Bit Order 7654321&#013;&#010;Stock C6&#013;&#010;Disable C2&#013;&#010;&#013;&#010;BIT0: Duty Cycle Monitoring&#013;&#010;BIT1: Cycle Duration&#013;&#010;BIT2: Post-Cat Sensor Diagnosis&#013;&#010;BIT3: Trimming Control - Bank 1&#013;&#010;BIT4: Trimming Control - Bank 2&#013;&#010;BIT5: ----&#013;&#010;BIT6: Cat Conversion&#013;&#010;BIT7: Jump Time Monitoring</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="108" />
     <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <outputtype>3</outputtype>
     <datatype>0</datatype>
@@ -6081,7 +6092,7 @@
     </MATH>
   </XDFCONSTANT>
   <XDFFLAG uniqueid="0x4C66">
-    <title>Sensor, O2, secondary, bank 1, enabled</title>
+    <title>Sensor, O2, secondary, enablement, bank 1</title>
     <description>K_LA_FREIGABE bit 3</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
@@ -6090,7 +6101,7 @@
     <mask>0x08</mask>
   </XDFFLAG>
   <XDFFLAG uniqueid="0x6865">
-    <title>Sensor, O2, secondary, bank 2, enabled</title>
+    <title>Sensor, O2, secondary, enablement, bank 2</title>
     <description>K_LA_FREIGABE bit 4</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
@@ -7214,6 +7225,7 @@
       <units>ft-lbs</units>
       <indexcount>4</indexcount>
       <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
       <embedinfo type="1" />
       <datatype>0</datatype>
       <unittype>0</unittype>
@@ -7239,10 +7251,10 @@
     <XDFAXIS id="z">
       <EMBEDDEDDATA mmedtypeflags="0x04" mmedaddress="0x71A0" mmedelementsizebits="16" mmedrowcount="3" mmedcolcount="4" mmedmajorstridebits="0" mmedminorstridebits="0" />
       <units>%</units>
-      <decimalpl>1</decimalpl>
+      <decimalpl>2</decimalpl>
       <min>0.000000</min>
       <max>100.000000</max>
-      <outputtype>2</outputtype>
+      <outputtype>1</outputtype>
       <MATH equation="(((1/(x/1024))-1)/7)*100">
         <VAR id="x" />
       </MATH>
@@ -7761,6 +7773,7 @@
       <EMBEDDEDDATA mmedaddress="0x6D9C" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>RPM</units>
       <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
       <outputtype>2</outputtype>
       <embedinfo type="1" />
       <datatype>0</datatype>
@@ -7774,6 +7787,7 @@
       <EMBEDDEDDATA mmedaddress="0x6DAC" mmedelementsizebits="16" mmedcolcount="6" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>&#176;C</units>
       <indexcount>6</indexcount>
+      <decimalpl>1</decimalpl>
       <outputtype>2</outputtype>
       <embedinfo type="1" />
       <datatype>0</datatype>
@@ -7832,7 +7846,7 @@
       <units>RF %</units>
       <decimalpl>2</decimalpl>
       <min>0.000000</min>
-      <max>20.000000</max>
+      <max>16.000000</max>
       <outputtype>1</outputtype>
       <MATH equation="x/100">
         <VAR id="x" />
@@ -8050,7 +8064,7 @@
       <units>&#176;</units>
       <decimalpl>1</decimalpl>
       <min>0.000000</min>
-      <max>43.000000</max>
+      <max>56.000000</max>
       <outputtype>2</outputtype>
       <MATH equation="x">
         <VAR id="x" />
@@ -8362,7 +8376,7 @@
     <title>VANOS, exhaust, offset target, bank 1</title>
     <description>K_AVAN1_SOLL_OFFSET</description>
     <CATEGORYMEM index="0" category="48" />
-    <CATEGORYMEM index="1" category="97" />
+    <CATEGORYMEM index="1" category="98" />
     <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x1396" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <units>&#176; crank</units>
     <decimalpl>1</decimalpl>
@@ -8458,7 +8472,7 @@
       <min>0.000000</min>
       <max>60.000000</max>
       <outputtype>2</outputtype>
-      <MATH equation="60-x">
+      <MATH equation="x">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
