@@ -1,4 +1,4 @@
-<!-- Written 12/18/2019 17:24:19 -->
+<!-- Written 01/03/2020 09:59:20 -->
 <XDFFORMAT version="1.60">
   <XDFHEADER>
     <flags>0x1</flags>
@@ -527,7 +527,7 @@
     </XDFAXIS>
   </XDFFUNCTION>
   <XDFCONSTANT uniqueid="0x72C3">
-    <title>Catalyst heating, ANSPRING</title>
+    <title>Catalyst heating, engine start/light-off</title>
     <description>K_TKATM_ANSPRING</description>
     <CATEGORYMEM index="0" category="4" />
     <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x602C" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
@@ -1663,6 +1663,65 @@
     <CATEGORYMEM index="0" category="6" />
     <XDFPATCHENTRY name="DTC 0xB3" address="0x3B54" datasize="0xE" patchdata="0000000000000000000000000000" basedata="B3010101010101000130342825FF" />
   </XDFPATCH>
+  <XDFCONSTANT uniqueid="0x6FEB" vislevel="10">
+    <title>K_DYN_DWDK_MIN</title>
+    <description>K_DYN_DWDK_MIN  4046&#013;&#010;Matched Length: 3  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 1756 HasDuplicate?: Yes &#013;&#010;Units- %/s  &#013;&#010;Function: Dynamik</description>
+    <CATEGORYMEM index="2" category="23" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x4046" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>%/s</units>
+    <rangehigh>5000.000000</rangehigh>
+    <rangelow>-5000.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x*5">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x1695" vislevel="10">
+    <title>K_DYN_DBGR_N_MIN</title>
+    <description>K_DYN_DBGR_N_MIN  765C&#013;&#010;Matched Length:   MatchRatio: 1.11&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 1746 HasDuplicate?: Yes &#013;&#010;Units- RPM  &#013;&#010;Function: Dynamik</description>
+    <CATEGORYMEM index="2" category="23" />
+    <EMBEDDEDDATA mmedaddress="0x765C" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>RPM</units>
+    <rangehigh>10000.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x3679" vislevel="10">
+    <title>K_DYN_DBGR_WDK_MIN</title>
+    <description>K_DYN_DBGR_WDK_MIN  5DF6&#013;&#010;Matched Length:   MatchRatio: 0.87&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 1686 HasDuplicate?: Yes &#013;&#010;Units- %  &#013;&#010;Function: Dynamik</description>
+    <CATEGORYMEM index="2" category="23" />
+    <EMBEDDEDDATA mmedaddress="0x5DF6" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>%</units>
+    <decimalpl>1</decimalpl>
+    <rangehigh>100.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x*100/250">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x4EC9" vislevel="10">
+    <title>K_DYN_DBGR_TMOT_MIN</title>
+    <description>K_DYN_DBGR_TMOT_MIN  75F3&#013;&#010;Matched Length:   MatchRatio: 0.92&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 1675 HasDuplicate?: No &#013;&#010;Units- &#176;C  &#013;&#010;Function: Dynamik</description>
+    <CATEGORYMEM index="2" category="23" />
+    <EMBEDDEDDATA mmedaddress="0x75F3" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>&#176;C</units>
+    <rangehigh>207.000000</rangehigh>
+    <rangelow>-48.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x-48">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
   <XDFCONSTANT uniqueid="0x5B30">
     <title>Dynamics, acceleration enrichment, delay time</title>
     <description>K_DYN_BA_TSPERR</description>
@@ -1683,17 +1742,79 @@
     <CATEGORYMEM index="0" category="9" />
     <CATEGORYMEM index="1" category="1" />
     <EMBEDDEDDATA mmedaddress="0x7759" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
-    <units>%/20ms</units>
+    <units>%/sec</units>
     <decimalpl>1</decimalpl>
     <rangehigh>12.000000</rangehigh>
     <rangelow>-12.000000</rangelow>
     <datatype>0</datatype>
     <unittype>0</unittype>
     <DALINK index="0" />
-    <MATH equation="x/10">
+    <MATH equation="x*5">
       <VAR id="x" />
     </MATH>
   </XDFCONSTANT>
+  <XDFFUNCTION uniqueid="0x4131" vislevel="10" flags="0x0">
+    <title>Dynamics, acceleration enrichment, pedal position, sport</title>
+    <description>KL_DYN_BA_PWG_SP  76FA&#013;&#010;Matched Length: 17  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 254 HasDuplicate?: No &#013;&#010;Units- X: - Y: %  &#013;&#010;Named- X: gang Function: Dynamik</description>
+    <CATEGORYMEM index="0" category="9" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x76F2" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <units>gear</units>
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x76FA" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x*0.4">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFFUNCTION>
+  <XDFFUNCTION uniqueid="0x6ADB" vislevel="10" flags="0x0">
+    <title>Dynamics, acceleration enrichment, pedal position, comfort</title>
+    <description>KL_DYN_BA_PWG_KOMF  771E&#013;&#010;Matched Length:   MatchRatio: 0.94&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 255 HasDuplicate?: No &#013;&#010;Units- X: - Y: %  &#013;&#010;Named- X: gang Function: Dynamik</description>
+    <CATEGORYMEM index="0" category="9" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x7716" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <units>gear</units>
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x771E" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x*0.4">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFFUNCTION>
   <XDFCONSTANT uniqueid="0x5B2F">
     <title>Dynamics, fuel cut, delay time</title>
     <description>K_DYN_SA_TSPERR</description>
@@ -1708,21 +1829,185 @@
       <VAR id="x" />
     </MATH>
   </XDFCONSTANT>
-  <XDFCONSTANT uniqueid="0x5B29">
-    <title>Dynamics, config, enabled</title>
-    <description>K_DYN_CONTROL</description>
+  <XDFCONSTANT uniqueid="0x6264">
+    <title>Dynamics, fuel cut, delta pedal position</title>
+    <description>K_DYN_SA_DPWG  7727&#013;&#010;Matched Length: 11  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 1673 HasDuplicate?: No &#013;&#010;Units- %/20ms  &#013;&#010;Function: Dynamik</description>
     <CATEGORYMEM index="0" category="9" />
-    <CATEGORYMEM index="1" category="52" />
-    <EMBEDDEDDATA mmedaddress="0x7758" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
-    <outputtype>2</outputtype>
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x7727" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>%/sec</units>
     <decimalpl>1</decimalpl>
+    <rangehigh>12.000000</rangehigh>
+    <rangelow>-12.000000</rangelow>
     <datatype>0</datatype>
     <unittype>0</unittype>
     <DALINK index="0" />
-    <MATH equation="x">
+    <MATH equation="x*5">
       <VAR id="x" />
     </MATH>
   </XDFCONSTANT>
+  <XDFFUNCTION uniqueid="0x41C" vislevel="10" flags="0x0">
+    <title>Dynamics, fuel cut, delta pedal position, comfort</title>
+    <description>KL_DYN_SA_DPWG_KOMF  7744&#013;&#010;Matched Length:   MatchRatio: 0.47&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 253 HasDuplicate?: No &#013;&#010;Units- X: - Y: %/20ms  &#013;&#010;Named- X: gang Function: Dynamik</description>
+    <CATEGORYMEM index="0" category="9" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x773C" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <units>gear</units>
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x7744" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <units>%/sec</units>
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x*5">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFFUNCTION>
+  <XDFFUNCTION uniqueid="0x2E2A" vislevel="10" flags="0x0">
+    <title>Dynamics, fuel cut, delta pedal position, sport</title>
+    <description>KL_DYN_SA_DPWG_SP  7732&#013;&#010;Matched Length:   MatchRatio: 0.53&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 252 HasDuplicate?: No &#013;&#010;Units- X: - Y: %/20ms  &#013;&#010;Named- X: gang Function: Dynamik</description>
+    <CATEGORYMEM index="0" category="9" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x772A" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <units>gear</units>
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x7732" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <units>%/sec</units>
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x*5">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFFUNCTION>
+  <XDFFUNCTION uniqueid="0x1021" vislevel="10" flags="0x0">
+    <title>KL_DYN_SA_DPWG_SP</title>
+    <description>KL_DYN_SA_DPWG_SP  7732&#013;&#010;Matched Length:   MatchRatio: 0.53&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 252 HasDuplicate?: No &#013;&#010;Units- X: - Y: %/20ms  &#013;&#010;Named- X: gang Function: Dynamik</description>
+    <CATEGORYMEM index="0" category="9" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x772A" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <units>-</units>
+      <indexcount>8</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x7732" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x/10">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFFUNCTION>
+  <XDFFUNCTION uniqueid="0x3665" vislevel="10" flags="0x0">
+    <title>KL_DYN_SA_DPWG_KOMF</title>
+    <description>KL_DYN_SA_DPWG_KOMF  7744&#013;&#010;Matched Length:   MatchRatio: 0.47&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 253 HasDuplicate?: No &#013;&#010;Units- X: - Y: %/20ms  &#013;&#010;Named- X: gang Function: Dynamik</description>
+    <CATEGORYMEM index="0" category="9" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x773C" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <units>-</units>
+      <indexcount>8</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x7744" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x/10">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFFUNCTION>
+  <XDFFUNCTION uniqueid="0x7953" vislevel="10" flags="0x0">
+    <title>KL_DYN_TZ_DBGR</title>
+    <description>KL_DYN_TZ_DBGR  76C8&#013;&#010;Matched Length: 11  MatchRatio: 0.71&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 177 HasDuplicate?: No &#013;&#010;Units- X: RPM Y: &#176;&#013;&#010;Named- X: n Function: Dynamik</description>
+    <CATEGORYMEM index="0" category="9" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x76B4" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>RPM</units>
+      <indexcount>10</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x76C8" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>&#176; ignition</units>
+      <indexcount>10</indexcount>
+      <decimalpl>1</decimalpl>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x/10">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFFUNCTION>
+  <XDFFLAG uniqueid="0x6817">
+    <title>Dynamics, config, enabled</title>
+    <description>K_DYN_CONTROL</description>
+    <CATEGORYMEM index="0" category="9" />
+    <EMBEDDEDDATA mmedaddress="0x7758" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <mask>0x01</mask>
+  </XDFFLAG>
   <XDFCONSTANT uniqueid="0xFC1" flags="0xC">
     <title>Dynamics, config, sport mode</title>
     <description>K_FDYN_CONTROL&#013;&#010;0 : Enabled w/DSC&#013;&#010;1 : Always sport mode&#013;&#010;2 : Always comfort mode&#013;&#010;3 : Default&#013;&#010;4 : Memory</description>
@@ -2495,6 +2780,139 @@
       <VAR id="x" />
     </MATH>
   </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x1CBF" flags="0x30">
+    <title>Fuel, injection, catalyst</title>
+    <description>KF_TI_N_RF_KAT_F</description>
+    <CATEGORYMEM index="0" category="22" />
+    <CATEGORYMEM index="1" category="68" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x4A0" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>RPM</units>
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x4B0" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>RF %</units>
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x/10">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x4C0" mmedelementsizebits="8" mmedrowcount="8" mmedcolcount="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>factor</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>1.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="x/128">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x76F5" vislevel="5" flags="0x30">
+    <title>Fuel, injection, catalyst load base</title>
+    <description>KF_TI_KATS_N_RF  418&#013;&#010;Matched Length:   MatchRatio: 0.15&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 90 HasDuplicate?: No &#013;&#010;Units- X: RPM Y: - Z: &#176;KW &#013;&#010;Named- X: n Y: rf &#013;&#010;Function: Einspritzung</description>
+    <CATEGORYMEM index="0" category="22" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x400" mmedelementsizebits="16" mmedcolcount="6" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>RPM</units>
+      <indexcount>6</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x40C" mmedelementsizebits="16" mmedcolcount="6" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>RF %</units>
+      <indexcount>6</indexcount>
+      <decimalpl>1</decimalpl>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x/10">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x418" mmedelementsizebits="8" mmedrowcount="6" mmedcolcount="6" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>&#176; crank</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x49B1" flags="0x30">
+    <title>Fuel, injection, catalyst, engine to coolant temp [M]</title>
+    <description>KF_TI_TMOT_TML_KAT_M&#013;&#010;&#013;&#010;Units- X: &#176;C Y: sec Z: -&#013;&#010;Named- X: tmot Y: t_ml</description>
+    <CATEGORYMEM index="0" category="22" />
+    <CATEGORYMEM index="1" category="68" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x74A" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>&#176;C</units>
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x-48">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x75A" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>seconds</units>
+      <indexcount>8</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x76A" mmedelementsizebits="16" mmedrowcount="8" mmedcolcount="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>factor</units>
+      <decimalpl>3</decimalpl>
+      <min>-1.000000</min>
+      <max>0.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="x/1024">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
   <XDFTABLE uniqueid="0xF08" vislevel="5" flags="0x30">
     <title>Fuel, injection, end angle</title>
     <description>KF_TI_ENDE_N_RF&#013;&#010;[-] Integer : end angle before valve opens&#013;&#010;[+] Integer : end angle after valve opens&#013;&#010;&#013;&#010;This map basically controls injector to intake valve timing (load based) to essentially achieve the very best mixture possible&#013;&#010;&#013;&#010;From a performance perspective we should be able to adjust these values to achieve better BMEP for a little more power and throttle response in the mid-range&#013;&#010;&#013;&#010;Injection end is ATDC &#176; crank before intake valve closing (based on actual VANOS position)&#013;&#010;&#013;&#010;You&apos;ll notice that at low-mid range the DME is injecting fuel into an open valve, and thusly, onto a closed valve at higher engine speeds&#013;&#010;&#013;&#010;Injection start is &#176; crank ATDC on the power stroke</description>
@@ -2587,16 +3005,27 @@
       </MATH>
     </XDFAXIS>
   </XDFTABLE>
-  <XDFTABLE uniqueid="0x1CBF" flags="0x30">
-    <title>Fuel, injection, factor, catalyst</title>
-    <description>KF_TI_N_RF_KAT_F</description>
+  <XDFTABLE uniqueid="0x186F" vislevel="5" flags="0x0">
+    <title>Fuel, injection, factor, catalyst, engine to coolant temp</title>
+    <description>KF_TI_TMOT_TML_KAT_F  626&#013;&#010;Matched Length:   MatchRatio: 0.27&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 38 HasDuplicate?: No &#013;&#010;Units- X: &#176;C Y: sec Z: - &#013;&#010;Named- X: tmot Y: t_ml &#013;&#010;Function: Einspritzung</description>
     <CATEGORYMEM index="0" category="22" />
-    <CATEGORYMEM index="1" category="68" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x4A0" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>RPM</units>
+      <EMBEDDEDDATA mmedaddress="0x606" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>&#176;C</units>
       <indexcount>8</indexcount>
-      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x-48">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x616" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>sec</units>
+      <indexcount>8</indexcount>
       <outputtype>2</outputtype>
       <embedinfo type="1" />
       <datatype>0</datatype>
@@ -2606,28 +3035,13 @@
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x4B0" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>RF %</units>
-      <indexcount>8</indexcount>
-      <decimalpl>1</decimalpl>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="x/10">
-        <VAR id="x" />
-      </MATH>
-    </XDFAXIS>
     <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x4C0" mmedelementsizebits="8" mmedrowcount="8" mmedcolcount="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>factor</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>1.000000</max>
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x626" mmedelementsizebits="16" mmedrowcount="8" mmedcolcount="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <decimalpl>3</decimalpl>
+      <min>-1.000000</min>
+      <max>4.000000</max>
       <outputtype>1</outputtype>
-      <MATH equation="x/128">
+      <MATH equation="x/1024">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
@@ -3007,7 +3421,7 @@
     </XDFAXIS>
   </XDFFUNCTION>
   <XDFTABLE uniqueid="0x4E4D" flags="0x30">
-    <title>Fuel, injection, secondary air, M</title>
+    <title>Fuel, injection, secondary air [M]</title>
     <description>KF_TI_N_RF_SLP_M</description>
     <CATEGORYMEM index="0" category="22" />
     <CATEGORYMEM index="1" category="68" />
@@ -3094,6 +3508,64 @@
       </MATH>
     </XDFAXIS>
   </XDFTABLE>
+  <XDFTABLE uniqueid="0x5605" flags="0x30">
+    <title>Fuel, injection, warmup engine to coolant temp</title>
+    <description>KF_TI_TMOT_TML_WL  80C&#013;&#010;Matched Length:   MatchRatio: 0.18&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 28 HasDuplicate?: No &#013;&#010;Units- X: &#176;C Y: sec Z: - &#013;&#010;Named- X: tmot Y: t_ml &#013;&#010;Function: Einspritzung</description>
+    <CATEGORYMEM index="0" category="22" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x7EC" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>&#176;C</units>
+      <indexcount>8</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x-48">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x7FC" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>sec</units>
+      <indexcount>8</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="x">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x80C" mmedelementsizebits="16" mmedrowcount="8" mmedcolcount="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <decimalpl>3</decimalpl>
+      <min>0.000000</min>
+      <max>1.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="x/1024">
+        <VAR id="x" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x3ABE">
+    <title>Fuel, system diagnosis, coolant temp, minimum</title>
+    <description>K_KSD_TMOT_MIN</description>
+    <CATEGORYMEM index="0" category="22" />
+    <CATEGORYMEM index="1" category="69" />
+    <CATEGORYMEM index="2" category="54" />
+    <EMBEDDEDDATA mmedaddress="0x3181" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>&#176;C</units>
+    <rangehigh>207.000000</rangehigh>
+    <rangelow>-48.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x-48">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
   <XDFCONSTANT uniqueid="0x653C" flags="0xC">
     <title>Fuel pump, electric, coolant temp, minimum</title>
     <description>K_EKP_TMOT_MIN</description>
@@ -4090,21 +4562,6 @@
       </MATH>
     </XDFAXIS>
   </XDFTABLE>
-  <XDFCONSTANT uniqueid="0x3ABE">
-    <title>Knock detection, coolant temp, minimum</title>
-    <description>K_KSD_TMOT_MIN</description>
-    <CATEGORYMEM index="0" category="30" />
-    <EMBEDDEDDATA mmedaddress="0x3181" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
-    <units>&#176;C</units>
-    <rangehigh>207.000000</rangehigh>
-    <rangelow>-48.000000</rangelow>
-    <datatype>0</datatype>
-    <unittype>0</unittype>
-    <DALINK index="0" />
-    <MATH equation="x-48">
-      <VAR id="x" />
-    </MATH>
-  </XDFCONSTANT>
   <XDFTABLE uniqueid="0x2024" flags="0x30">
     <title>Knock detection, factor, cyl 1</title>
     <description>KF_KD_KFAKT_1</description>
@@ -4443,7 +4900,7 @@
   </XDFTABLE>
   <XDFCONSTANT uniqueid="0xC11" flags="0xC">
     <title>Lambda adaptation, LTFT/multiplicative, factor, maximum</title>
-    <description>K_LAA_FMAX</description>
+    <description>K_LAA_FMAX&#013;&#010;For adaptation, lambda @ K_LAS_UMAX volts</description>
     <CATEGORYMEM index="0" category="31" />
     <CATEGORYMEM index="1" category="113" />
     <EMBEDDEDDATA mmedaddress="0x3134" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
@@ -4473,7 +4930,7 @@
     </MATH>
   </XDFCONSTANT>
   <XDFFUNCTION uniqueid="0x73C8" flags="0x0">
-    <title>Lambda adaption, RPM, adaptation</title>
+    <title>Lambda adaptation, RPM, enable</title>
     <description>KL_LA_N</description>
     <CATEGORYMEM index="0" category="31" />
     <XDFAXIS id="x" uniqueid="0x0">
@@ -4506,7 +4963,7 @@
     </XDFAXIS>
   </XDFFUNCTION>
   <XDFFUNCTION uniqueid="0x12B8" flags="0x0">
-    <title>Lambda adaption, RPM, utilization</title>
+    <title>Lambda adaptation, RPM, utilization</title>
     <description>KL_LAA_N&#013;&#010;Adaptation enabled when load is less than map threshold</description>
     <CATEGORYMEM index="0" category="31" />
     <XDFAXIS id="x" uniqueid="0x0">
@@ -4538,6 +4995,307 @@
       </MATH>
     </XDFAXIS>
   </XDFFUNCTION>
+  <XDFCONSTANT uniqueid="0xCAA" vislevel="10">
+    <title>K_LAA_TMOT_MIN</title>
+    <description>K_LAA_TMOT_MIN  312E&#013;&#010;Matched Length:   MatchRatio: 0.93&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 871 HasDuplicate?: No &#013;&#010;Units- &#176;C  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x312E" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>&#176;C</units>
+    <rangehigh>207.000000</rangehigh>
+    <rangelow>-48.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x-48">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x3C4F" vislevel="10">
+    <title>K_LAA_TMOT_MAX</title>
+    <description>K_LAA_TMOT_MAX  312F&#013;&#010;Matched Length:   MatchRatio: 1.04&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 870 HasDuplicate?: No &#013;&#010;Units- &#176;C  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x312F" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>&#176;C</units>
+    <rangehigh>207.000000</rangehigh>
+    <rangelow>-48.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x-48">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x62C5" vislevel="10">
+    <title>K_LAA_TAN</title>
+    <description>K_LAA_TAN  3130&#013;&#010;Matched Length:   MatchRatio: 0.92&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 866 HasDuplicate?: No &#013;&#010;Units- &#176;C  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3130" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>&#176;C</units>
+    <rangehigh>207.000000</rangehigh>
+    <rangelow>-48.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x-48">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x1AF9" vislevel="10">
+    <title>K_LAA_TAU</title>
+    <description>K_LAA_TAU  3132&#013;&#010;Matched Length:   MatchRatio: 0.60&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 867 HasDuplicate?: Yes &#013;&#010;Units- msec  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3132" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>msec</units>
+    <rangehigh>327670.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x*10">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x38C2" vislevel="10">
+    <title>K_LAA_ML_SO1</title>
+    <description>K_LAA_ML_SO1  3138&#013;&#010;Matched Length: 4  MatchRatio: 1.07&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 877 HasDuplicate?: No &#013;&#010;Units- kg/h  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3138" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>kg/h</units>
+    <decimalpl>1</decimalpl>
+    <rangehigh>16383.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/4">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x6E4" vislevel="10">
+    <title>K_LAA_N_SO1</title>
+    <description>K_LAA_N_SO1  313C&#013;&#010;Matched Length:   MatchRatio: 1.20&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 878 HasDuplicate?: Yes &#013;&#010;Units- U/min  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x313C" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>U/min</units>
+    <rangehigh>65535.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x5D6F" vislevel="10">
+    <title>K_LAA_ML_SU2</title>
+    <description>K_LAA_ML_SU2  313A&#013;&#010;Matched Length:   MatchRatio: 0.80&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 879 HasDuplicate?: Yes &#013;&#010;Units- kg/h  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x313A" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>kg/h</units>
+    <decimalpl>1</decimalpl>
+    <rangehigh>16383.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/4">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x417E" vislevel="10">
+    <title>K_LAA_RF_SU2</title>
+    <description>K_LAA_RF_SU2  313E&#013;&#010;Matched Length:   MatchRatio: 0.91&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 874 HasDuplicate?: No &#013;&#010;Units- -  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x313E" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>-</units>
+    <decimalpl>3</decimalpl>
+    <rangehigh>2.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/1000">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x79B2" vislevel="10">
+    <title>K_LAA_TAU1</title>
+    <description>K_LAA_TAU1  3140&#013;&#010;Matched Length:   MatchRatio: 0.49&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 873 HasDuplicate?: No &#013;&#010;Units- msec  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3140" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>msec</units>
+    <rangehigh>655350.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x*10">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0xE38" vislevel="10">
+    <title>K_LAA_TAU2</title>
+    <description>K_LAA_TAU2  3142&#013;&#010;Matched Length:   MatchRatio: 0.49&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 875 HasDuplicate?: No &#013;&#010;Units- msec  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3142" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>msec</units>
+    <rangehigh>655350.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x*10">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x357C" vislevel="10">
+    <title>K_LAA_T_US</title>
+    <description>K_LAA_T_US  3144&#013;&#010;Matched Length: 6  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 872 HasDuplicate?: No &#013;&#010;Units- msec  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3144" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>msec</units>
+    <rangehigh>65535.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x60AA" vislevel="10">
+    <title>K_LAA_V</title>
+    <description>K_LAA_V  314A&#013;&#010;Matched Length: 5  MatchRatio: 0.05&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 856 HasDuplicate?: No &#013;&#010;Units- km/h  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x314A" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>km/h</units>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x44CD" vislevel="10">
+    <title>K_LAA_N_NORM</title>
+    <description>K_LAA_N_NORM  314B&#013;&#010;Matched Length:   MatchRatio: 1.20&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 855 HasDuplicate?: No &#013;&#010;Units- U/min  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x314B" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>U/min</units>
+    <rangehigh>10200.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x*40">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x5FB4" vislevel="10">
+    <title>K_LAA_N_NORM_MIN</title>
+    <description>K_LAA_N_NORM_MIN  314C&#013;&#010;Matched Length:   MatchRatio: 1.00&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 851 HasDuplicate?: No &#013;&#010;Units- U/min  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x314C" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>U/min</units>
+    <rangehigh>10200.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x*40">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x7CCD" vislevel="10">
+    <title>K_LA_TI_MIN</title>
+    <description>K_LA_TI_MIN  314E&#013;&#010;Matched Length:   MatchRatio: 1.17&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 852 HasDuplicate?: No &#013;&#010;Units- msec  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x314E" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>msec</units>
+    <rangehigh>2.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/1000">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x4F99" vislevel="10">
+    <title>K_LAA_OFFSET_MAX</title>
+    <description>K_LAA_OFFSET_MAX  3146&#013;&#010;Matched Length: 5  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 857 HasDuplicate?: No &#013;&#010;Units- msec  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x3146" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>msec</units>
+    <rangehigh>1.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/1000">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x70E4" vislevel="10">
+    <title>K_LAA_OFFSET_MIN</title>
+    <description>K_LAA_OFFSET_MIN  3148&#013;&#010;Matched Length: 4  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 854 HasDuplicate?: Yes &#013;&#010;Units- msec  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x3148" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>msec</units>
+    <rangehigh>0.000000</rangehigh>
+    <rangelow>-1.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/1000">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x2FD3" vislevel="10">
+    <title>K_LAA_OFFSET_O</title>
+    <description>K_LAA_OFFSET_O  3150&#013;&#010;Matched Length: 6  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 853 HasDuplicate?: Yes &#013;&#010;Units- msec  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x3150" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>msec</units>
+    <rangehigh>1.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/1000">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x1F3" vislevel="10">
+    <title>K_LAA_OFFSET_U</title>
+    <description>K_LAA_OFFSET_U  3152&#013;&#010;Matched Length: 6  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 861 HasDuplicate?: No &#013;&#010;Units- msec  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x3152" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>msec</units>
+    <rangehigh>0.000000</rangehigh>
+    <rangelow>-1.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/1000">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x2868" vislevel="10">
+    <title>K_LAA_F_O</title>
+    <description>K_LAA_F_O  3154&#013;&#010;Matched Length: 9  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 862 HasDuplicate?: No &#013;&#010;Units- -  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3154" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>-</units>
+    <rangehigh>2.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/32768">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x451C" vislevel="10">
+    <title>K_LAA_F_U</title>
+    <description>K_LAA_F_U  3156&#013;&#010;Matched Length: 6  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 864 HasDuplicate?: No &#013;&#010;Units- -  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3156" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>-</units>
+    <rangehigh>2.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/32768">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
   <XDFCONSTANT uniqueid="0x29C4">
     <title>Lambda, fuel injection duration, minimum</title>
     <description>K_LA_TI_MIN</description>
@@ -4549,19 +5307,6 @@
     <unittype>0</unittype>
     <DALINK index="0" />
     <MATH equation="x/1000">
-      <VAR id="x" />
-    </MATH>
-  </XDFCONSTANT>
-  <XDFCONSTANT uniqueid="0x4149" flags="0xC">
-    <title>Lambda, release</title>
-    <description>K_LA_FREIGABE</description>
-    <CATEGORYMEM index="0" category="35" />
-    <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
-    <units>bitmask</units>
-    <datatype>0</datatype>
-    <unittype>0</unittype>
-    <DALINK index="0" />
-    <MATH equation="x">
       <VAR id="x" />
     </MATH>
   </XDFCONSTANT>
@@ -5995,24 +6740,6 @@
       </MATH>
     </XDFAXIS>
   </XDFFUNCTION>
-  <XDFFLAG uniqueid="0x6864">
-    <title>Sensor, O2, control enablement, bank 1</title>
-    <description>K_LA_FREIGABE bit 1</description>
-    <CATEGORYMEM index="0" category="91" />
-    <CATEGORYMEM index="1" category="93" />
-    <CATEGORYMEM index="2" category="66" />
-    <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
-    <mask>0x02</mask>
-  </XDFFLAG>
-  <XDFFLAG uniqueid="0xC58">
-    <title>Sensor, O2, control enablement, bank 2</title>
-    <description>K_LA_FREIGABE bit 2</description>
-    <CATEGORYMEM index="0" category="91" />
-    <CATEGORYMEM index="1" category="93" />
-    <CATEGORYMEM index="2" category="66" />
-    <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
-    <mask>0x04</mask>
-  </XDFFLAG>
   <XDFFLAG uniqueid="0x153F">
     <title>Sensor, O2, OBD disable, duty cycle monitoring</title>
     <description>K_LA_OBD_FREIGABE bit 0</description>
@@ -6058,6 +6785,15 @@
     <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x10</mask>
   </XDFFLAG>
+  <XDFFLAG uniqueid="0x6B15">
+    <title>Sensor, O2, OBD disable, bit 5 (unknown)</title>
+    <description>K_LA_OBD_FREIGABE bit 5</description>
+    <CATEGORYMEM index="0" category="91" />
+    <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="108" />
+    <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <mask>0x20</mask>
+  </XDFFLAG>
   <XDFFLAG uniqueid="0x25FC">
     <title>Sensor, O2, OBD disable, cat conversion</title>
     <description>K_LA_OBD_FREIGABE bit 6</description>
@@ -6076,14 +6812,13 @@
     <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x80</mask>
   </XDFFLAG>
-  <XDFCONSTANT uniqueid="0x41A7">
-    <title>Sensor, O2, OBD disable</title>
-    <description>K_LA_OBD_FREIGABE&#013;&#010;Bit Order 7654321&#013;&#010;Stock C6&#013;&#010;Disable C2&#013;&#010;&#013;&#010;BIT0: Duty Cycle Monitoring&#013;&#010;BIT1: Cycle Duration&#013;&#010;BIT2: Post-Cat Sensor Diagnosis&#013;&#010;BIT3: Trimming Control - Bank 1&#013;&#010;BIT4: Trimming Control - Bank 2&#013;&#010;BIT5: ----&#013;&#010;BIT6: Cat Conversion&#013;&#010;BIT7: Jump Time Monitoring</description>
+  <XDFCONSTANT uniqueid="0x4149" flags="0xC">
+    <title>Sensor, O2, K_LA_FREIGABE</title>
+    <description>K_LA_FREIGABE</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="93" />
-    <CATEGORYMEM index="2" category="108" />
-    <EMBEDDEDDATA mmedaddress="0x3380" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
-    <outputtype>3</outputtype>
+    <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>bitmask</units>
     <datatype>0</datatype>
     <unittype>0</unittype>
     <DALINK index="0" />
@@ -6091,6 +6826,24 @@
       <VAR id="x" />
     </MATH>
   </XDFCONSTANT>
+  <XDFFLAG uniqueid="0x6864">
+    <title>Sensor, O2, control enablement, bank 1</title>
+    <description>K_LA_FREIGABE bit 1</description>
+    <CATEGORYMEM index="0" category="91" />
+    <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="66" />
+    <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <mask>0x02</mask>
+  </XDFFLAG>
+  <XDFFLAG uniqueid="0xC58">
+    <title>Sensor, O2, control enablement, bank 2</title>
+    <description>K_LA_FREIGABE bit 2</description>
+    <CATEGORYMEM index="0" category="91" />
+    <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="66" />
+    <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <mask>0x04</mask>
+  </XDFFLAG>
   <XDFFLAG uniqueid="0x4C66">
     <title>Sensor, O2, secondary, enablement, bank 1</title>
     <description>K_LA_FREIGABE bit 3</description>
@@ -6109,15 +6862,6 @@
     <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x10</mask>
   </XDFFLAG>
-  <XDFFLAG uniqueid="0x34A6">
-    <title>Sensor, O2, adaptation, additive</title>
-    <description>K_LA_FREIGABE bit 6</description>
-    <CATEGORYMEM index="0" category="91" />
-    <CATEGORYMEM index="1" category="93" />
-    <CATEGORYMEM index="2" category="41" />
-    <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
-    <mask>0x40</mask>
-  </XDFFLAG>
   <XDFFLAG uniqueid="0x2F26">
     <title>Sensor, O2, adaptation, multiplicative</title>
     <description>K_LA_FREIGABE bit 5</description>
@@ -6126,6 +6870,15 @@
     <CATEGORYMEM index="2" category="41" />
     <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <mask>0x20</mask>
+  </XDFFLAG>
+  <XDFFLAG uniqueid="0x34A6">
+    <title>Sensor, O2, adaptation, additive</title>
+    <description>K_LA_FREIGABE bit 6</description>
+    <CATEGORYMEM index="0" category="91" />
+    <CATEGORYMEM index="1" category="93" />
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3112" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <mask>0x40</mask>
   </XDFFLAG>
   <XDFCONSTANT uniqueid="0x7F90" flags="0xC">
     <title>Sensor, O2, secondary, voltage, rich</title>
@@ -6179,10 +6932,9 @@
     </MATH>
   </XDFCONSTANT>
   <XDFFUNCTION uniqueid="0x3D17" flags="0x0">
-    <title>Servotronic, comfort mode, assist</title>
+    <title>Servotronic, assist, comfort mode</title>
     <description>KL_SERVO_KOMFORT</description>
     <CATEGORYMEM index="0" category="42" />
-    <CATEGORYMEM index="1" category="83" />
     <XDFAXIS id="x" flags="0xC" uniqueid="0x0">
       <EMBEDDEDDATA mmedaddress="0x7F2A" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>MPH</units>
@@ -6215,10 +6967,9 @@
     </XDFAXIS>
   </XDFFUNCTION>
   <XDFFUNCTION uniqueid="0x3D18" flags="0x0">
-    <title>Servotronic, sport mode, assist</title>
+    <title>Servotronic, assist, sport mode</title>
     <description>KL_SERVO_SPORT</description>
     <CATEGORYMEM index="0" category="42" />
-    <CATEGORYMEM index="1" category="84" />
     <XDFAXIS id="x" flags="0xC" uniqueid="0x0">
       <EMBEDDEDDATA mmedaddress="0x7F54" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>MPH</units>
