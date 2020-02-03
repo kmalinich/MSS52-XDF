@@ -1,4 +1,4 @@
-<!-- Written 01/03/2020 09:59:20 -->
+<!-- Written 02/01/2020 00:52:59 -->
 <XDFFORMAT version="1.60">
   <XDFHEADER>
     <flags>0x1</flags>
@@ -1666,7 +1666,7 @@
   <XDFCONSTANT uniqueid="0x6FEB" vislevel="10">
     <title>K_DYN_DWDK_MIN</title>
     <description>K_DYN_DWDK_MIN  4046&#013;&#010;Matched Length: 3  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 1756 HasDuplicate?: Yes &#013;&#010;Units- %/s  &#013;&#010;Function: Dynamik</description>
-    <CATEGORYMEM index="2" category="23" />
+    <CATEGORYMEM index="0" category="9" />
     <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x4046" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <units>%/s</units>
     <rangehigh>5000.000000</rangehigh>
@@ -1681,7 +1681,7 @@
   <XDFCONSTANT uniqueid="0x1695" vislevel="10">
     <title>K_DYN_DBGR_N_MIN</title>
     <description>K_DYN_DBGR_N_MIN  765C&#013;&#010;Matched Length:   MatchRatio: 1.11&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 1746 HasDuplicate?: Yes &#013;&#010;Units- RPM  &#013;&#010;Function: Dynamik</description>
-    <CATEGORYMEM index="2" category="23" />
+    <CATEGORYMEM index="0" category="9" />
     <EMBEDDEDDATA mmedaddress="0x765C" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <units>RPM</units>
     <rangehigh>10000.000000</rangehigh>
@@ -1695,7 +1695,7 @@
   <XDFCONSTANT uniqueid="0x3679" vislevel="10">
     <title>K_DYN_DBGR_WDK_MIN</title>
     <description>K_DYN_DBGR_WDK_MIN  5DF6&#013;&#010;Matched Length:   MatchRatio: 0.87&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 1686 HasDuplicate?: Yes &#013;&#010;Units- %  &#013;&#010;Function: Dynamik</description>
-    <CATEGORYMEM index="2" category="23" />
+    <CATEGORYMEM index="0" category="9" />
     <EMBEDDEDDATA mmedaddress="0x5DF6" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <units>%</units>
     <decimalpl>1</decimalpl>
@@ -1710,7 +1710,7 @@
   <XDFCONSTANT uniqueid="0x4EC9" vislevel="10">
     <title>K_DYN_DBGR_TMOT_MIN</title>
     <description>K_DYN_DBGR_TMOT_MIN  75F3&#013;&#010;Matched Length:   MatchRatio: 0.92&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 1675 HasDuplicate?: No &#013;&#010;Units- &#176;C  &#013;&#010;Function: Dynamik</description>
-    <CATEGORYMEM index="2" category="23" />
+    <CATEGORYMEM index="0" category="9" />
     <EMBEDDEDDATA mmedaddress="0x75F3" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <units>&#176;C</units>
     <rangehigh>207.000000</rangehigh>
@@ -5763,6 +5763,153 @@
       <VAR id="x" />
     </MATH>
   </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x1EC0" vislevel="10">
+    <title>K_LA_TMOT_KS_MIN</title>
+    <description>K_LA_TMOT_KS_MIN  315C&#013;&#010;Matched Length:   MatchRatio: 1.02&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 858 HasDuplicate?: No &#013;&#010;Units- &#176;C  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="0" category="35" />
+    <EMBEDDEDDATA mmedaddress="0x315C" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>&#176;C</units>
+    <rangehigh>207.000000</rangehigh>
+    <rangelow>-48.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x-48">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x7B25" vislevel="10">
+    <title>K_LA_TMOT_KS_MAX</title>
+    <description>K_LA_TMOT_KS_MAX  315D&#013;&#010;Matched Length:   MatchRatio: 1.02&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 860 HasDuplicate?: No &#013;&#010;Units- &#176;C  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="0" category="35" />
+    <EMBEDDEDDATA mmedaddress="0x315D" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>&#176;C</units>
+    <rangehigh>207.000000</rangehigh>
+    <rangelow>-48.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x-48">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x1DD4" vislevel="10">
+    <title>K_LA_TMOT_HS_MIN</title>
+    <description>K_LA_TMOT_HS_MIN  315E&#013;&#010;Matched Length:   MatchRatio: 1.00&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 820 HasDuplicate?: No &#013;&#010;Units- &#176;C  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="0" category="35" />
+    <EMBEDDEDDATA mmedaddress="0x315E" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>&#176;C</units>
+    <rangehigh>207.000000</rangehigh>
+    <rangelow>-48.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x-48">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x48B1" vislevel="10">
+    <title>K_LA_TMOT_HS_MAX</title>
+    <description>K_LA_TMOT_HS_MAX  315F&#013;&#010;Matched Length: 3  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 582 HasDuplicate?: No &#013;&#010;Units- &#176;C  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="0" category="35" />
+    <EMBEDDEDDATA mmedaddress="0x315F" mmedelementsizebits="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>&#176;C</units>
+    <rangehigh>207.000000</rangehigh>
+    <rangelow>-48.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x-48">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x3C60" vislevel="10">
+    <title>K_LA_USV_GMW_RF_MIN</title>
+    <description>K_LA_USV_GMW_RF_MIN  3166&#013;&#010;Matched Length:   MatchRatio: 0.57&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 538 HasDuplicate?: Yes &#013;&#010;Units- -  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3166" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>-</units>
+    <decimalpl>3</decimalpl>
+    <rangehigh>2.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/1000">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x5B76" vislevel="10">
+    <title>K_LA_USV_GMW_RF_MAX</title>
+    <description>K_LA_USV_GMW_RF_MAX  3168&#013;&#010;Matched Length:   MatchRatio: 1.38&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 539 HasDuplicate?: Yes &#013;&#010;Units- -  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x3168" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>-</units>
+    <decimalpl>3</decimalpl>
+    <rangehigh>2.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/1000">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x7AC1" vislevel="10">
+    <title>K_LA_USV_GMW_TAU</title>
+    <description>K_LA_USV_GMW_TAU  271C&#013;&#010;Matched Length: 4  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 540 HasDuplicate?: No &#013;&#010;Units- s  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x271C" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>s</units>
+    <decimalpl>1</decimalpl>
+    <rangehigh>655.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x/100">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x13AD" vislevel="10">
+    <title>K_LA_USV_GMW_HYS</title>
+    <description>K_LA_USV_GMW_HYS  316C&#013;&#010;Matched Length: 4  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 548 HasDuplicate?: Yes &#013;&#010;Units- mV  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x316C" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>mV</units>
+    <rangehigh>1200.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x2FC8" vislevel="10">
+    <title>K_LA_USV_GMW_MAX_INI</title>
+    <description>K_LA_USV_GMW_MAX_INI  316E&#013;&#010;Matched Length: 3  MatchRatio: 1.00&#013;&#010;BlockFound: 0 NearbyBlockMatch: -1 Var: 549 HasDuplicate?: Yes &#013;&#010;Units- mV  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="2" category="41" />
+    <EMBEDDEDDATA mmedaddress="0x316E" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>mV</units>
+    <rangehigh>1200.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x4E44" vislevel="10">
+    <title>K_LA_GRENZ_INI</title>
+    <description>K_LA_GRENZ_INI  3172&#013;&#010;Matched Length:   MatchRatio: 1.00&#013;&#010;BlockFound: 1 NearbyBlockMatch: -1 Var: 550 HasDuplicate?: No &#013;&#010;Units- mV  &#013;&#010;Function: Lambda</description>
+    <CATEGORYMEM index="0" category="35" />
+    <EMBEDDEDDATA mmedaddress="0x3172" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>mV</units>
+    <rangehigh>1200.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="x">
+      <VAR id="x" />
+    </MATH>
+  </XDFCONSTANT>
   <XDFTABLE uniqueid="0x1930" flags="0x30">
     <title>Load detection, gear, ratios</title>
     <description>K_SMG_I_GANG</description>
@@ -7223,7 +7370,7 @@
     </XDFAXIS>
   </XDFTABLE>
   <XDFTABLE uniqueid="0x6B9C" flags="0x30">
-    <title>Throttle, electronic, base pedal map (100%)</title>
+    <title>Throttle, electronic, base pedal map (normal)</title>
     <description>KF_EGAS_WDK</description>
     <CATEGORYMEM index="0" category="12" />
     <XDFAXIS id="x" uniqueid="0x0">
@@ -7258,7 +7405,7 @@
       <units>TPS %</units>
       <decimalpl>1</decimalpl>
       <min>0.000000</min>
-      <max>154.000000</max>
+      <max>100.000000</max>
       <outputtype>1</outputtype>
       <MATH equation="x/10">
         <VAR id="x" />
@@ -7406,7 +7553,7 @@
     </XDFAXIS>
   </XDFTABLE>
   <XDFTABLE uniqueid="0x1380" flags="0x30">
-    <title>Throttle, electronic, base pedal map (Y-axis)</title>
+    <title>Throttle, electronic, base pedal map (Y-axis) [/130]</title>
     <CATEGORYMEM index="0" category="12" />
     <XDFAXIS id="x" uniqueid="0x0">
       <EMBEDDEDDATA mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
@@ -7460,11 +7607,11 @@
     <XDFAXIS id="z">
       <EMBEDDEDDATA mmedaddress="0x6364" mmedelementsizebits="16" mmedrowcount="23" mmedmajorstridebits="0" mmedminorstridebits="0" />
       <units>RF %</units>
-      <decimalpl>2</decimalpl>
+      <decimalpl>1</decimalpl>
       <min>0.000000</min>
-      <max>160.000000</max>
+      <max>100.000000</max>
       <outputtype>1</outputtype>
-      <MATH equation="x/100">
+      <MATH equation="x/130">
         <VAR id="x" />
       </MATH>
     </XDFAXIS>
