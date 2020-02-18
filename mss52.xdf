@@ -1,4 +1,4 @@
-<!-- Written 02/14/2020 17:06:00 -->
+<!-- Written 02/18/2020 11:02:53 -->
 <XDFFORMAT version="1.60">
   <XDFHEADER>
     <flags>0x1</flags>
@@ -150,7 +150,7 @@
     <description>K_RF_HUBVOLUMEN</description>
     <CATEGORYMEM index="0" category="20" />
     <EMBEDDEDDATA mmedaddress="0x60FA" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
-    <units>Liters</units>
+    <units>liters</units>
     <decimalpl>3</decimalpl>
     <rangehigh>10.000000</rangehigh>
     <datatype>0</datatype>
@@ -2938,7 +2938,7 @@
       <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x76A" mmedelementsizebits="16" mmedrowcount="8" mmedcolcount="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
       <units>factor/t_ml</units>
       <decimalpl>3</decimalpl>
-      <min>-1.000000</min>
+      <min>-0.600000</min>
       <max>0.000000</max>
       <outputtype>1</outputtype>
       <MATH equation="x/1024">
@@ -2946,7 +2946,7 @@
       </MATH>
     </XDFAXIS>
   </XDFTABLE>
-  <XDFTABLE uniqueid="0x186F" vislevel="5" flags="0x0">
+  <XDFTABLE uniqueid="0x186F" vislevel="5" flags="0x30">
     <title>Fuel, injection, catalyst, coolant temp vs. time [F]</title>
     <description>KF_TI_TMOT_TML_KAT_F</description>
     <CATEGORYMEM index="0" category="22" />
@@ -2980,8 +2980,8 @@
     <XDFAXIS id="z">
       <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x626" mmedelementsizebits="16" mmedrowcount="8" mmedcolcount="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
       <decimalpl>3</decimalpl>
-      <min>-1.000000</min>
-      <max>4.000000</max>
+      <min>0.000000</min>
+      <max>1.000000</max>
       <outputtype>1</outputtype>
       <MATH equation="x/1024">
         <VAR id="x" />
