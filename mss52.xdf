@@ -1,4 +1,4 @@
-<!-- Written 02/18/2020 11:02:53 -->
+<!-- Written 03/12/2020 19:03:32 -->
 <XDFFORMAT version="1.60">
   <XDFHEADER>
     <flags>0x1</flags>
@@ -273,7 +273,7 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7DAD" flags="0x30">
     <title>Alpha-N, % RF vs. RPM, hard</title>
-    <description>KF_DKBA_HARD_RF_N&#013;&#010;% RF vs RPM - Hard&#013;&#010;Active when NOT stationary</description>
+    <description>KF_DKBA_HARD_RF_N&#013;&#010;Active when NOT stationary</description>
     <CATEGORYMEM index="0" category="20" />
     <XDFAXIS id="x" uniqueid="0x0">
       <EMBEDDEDDATA mmedaddress="0x1744" mmedelementsizebits="16" mmedcolcount="4" mmedmajorstridebits="16" mmedminorstridebits="0" />
@@ -315,7 +315,7 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x1A3A" flags="0x30">
     <title>Alpha-N, % RF vs. RPM, soft</title>
-    <description>KF_DKBA_SOFT_RF_N&#013;&#010;% RF vs RPM - Soft&#013;&#010;Active when stopped, and starting acceleration (stationary/bit=0)</description>
+    <description>KF_DKBA_SOFT_RF_N&#013;&#010;Active when stationary, and starting acceleration (stationary/bit=0)</description>
     <CATEGORYMEM index="0" category="20" />
     <XDFAXIS id="x" uniqueid="0x0">
       <EMBEDDEDDATA mmedaddress="0x1712" mmedelementsizebits="16" mmedcolcount="4" mmedmajorstridebits="16" mmedminorstridebits="0" />
@@ -1261,7 +1261,7 @@
   </XDFCONSTANT>
   <XDFCONSTANT uniqueid="0x383D">
     <title>DME, config, master, MIL mode</title>
-    <description>K_MIL_MODE_M&#013;&#010;0x00 : No MIL control&#013;&#010;0x01 : MIL for BMW errors&#013;&#010;0x02 : MIL for OBD&#013;&#010;0x04 : MIL for OEK error&#013;&#010;0x08 : MIL for Japan&#013;&#010;&#013;&#010;0x0F : MIL for all errors</description>
+    <description>K_MIL_MODE_M&#013;&#010;0x00 : No MIL control&#013;&#010;0x01 : MIL for BMW errors&#013;&#010;0x02 : MIL for OBD&#013;&#010;0x04 : MIL for OEK error&#013;&#010;0x08 : MIL for Japan</description>
     <CATEGORYMEM index="0" category="5" />
     <CATEGORYMEM index="1" category="52" />
     <CATEGORYMEM index="2" category="87" />
@@ -1535,7 +1535,7 @@
   </XDFCONSTANT>
   <XDFCONSTANT uniqueid="0x383E">
     <title>DME, config, slave, MIL mode</title>
-    <description>K_MIL_MODE_S&#013;&#010;0x00 : No MIL control&#013;&#010;0x01 : MIL for BMW errors&#013;&#010;0x02 : MIL for OBD&#013;&#010;0x04 : MIL for OEK error&#013;&#010;0x08 : MIL for Japan&#013;&#010;&#013;&#010;0x0F : MIL for all errors</description>
+    <description>K_MIL_MODE_S&#013;&#010;0x00 : No MIL control&#013;&#010;0x01 : MIL for BMW errors&#013;&#010;0x02 : MIL for OBD&#013;&#010;0x04 : MIL for OEK error&#013;&#010;0x08 : MIL for Japan</description>
     <CATEGORYMEM index="0" category="5" />
     <CATEGORYMEM index="1" category="52" />
     <CATEGORYMEM index="2" category="88" />
@@ -4902,6 +4902,7 @@
     <CATEGORYMEM index="2" category="113" />
     <EMBEDDEDDATA mmedaddress="0x3134" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <units>factor</units>
+    <decimalpl>3</decimalpl>
     <rangehigh>2.000000</rangehigh>
     <datatype>0</datatype>
     <unittype>0</unittype>
@@ -4918,6 +4919,7 @@
     <CATEGORYMEM index="2" category="113" />
     <EMBEDDEDDATA mmedaddress="0x3136" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
     <units>lambda</units>
+    <decimalpl>3</decimalpl>
     <rangehigh>1.500000</rangehigh>
     <rangelow>0.500000</rangelow>
     <datatype>0</datatype>
@@ -7923,9 +7925,11 @@
     </MATH>
   </XDFCONSTANT>
   <XDFTABLE uniqueid="0x4787" flags="0x30">
-    <title>Torque management, air system, fuel cut</title>
+    <title>Torque management, air system, fuel restart</title>
     <description>KF_MD_LS_WE</description>
     <CATEGORYMEM index="0" category="45" />
+    <CATEGORYMEM index="1" category="22" />
+    <CATEGORYMEM index="2" category="72" />
     <XDFAXIS id="x" uniqueid="0x0">
       <EMBEDDEDDATA mmedaddress="0x721C" mmedelementsizebits="16" mmedcolcount="4" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
