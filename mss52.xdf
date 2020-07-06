@@ -1,4 +1,4 @@
-<!-- Written 05/17/2020 12:51:11 -->
+<!-- Written 06/25/2020 16:20:10 -->
 <XDFFORMAT version="1.60">
   <XDFHEADER>
     <flags>0x1</flags>
@@ -8967,6 +8967,7 @@
       <units>% PWG</units>
       <indexcount>6</indexcount>
       <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
       <embedinfo type="1" />
       <datatype>0</datatype>
       <unittype>0</unittype>
@@ -8994,7 +8995,7 @@
       <units>ft-lbs per millisecond</units>
       <decimalpl>2</decimalpl>
       <min>0.000000</min>
-      <max>20.000000</max>
+      <max>12.000000</max>
       <outputtype>1</outputtype>
       <MATH equation="(x/100)*.7375621492772654">
         <VAR id="x" />
