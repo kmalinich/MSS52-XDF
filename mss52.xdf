@@ -7003,7 +7003,7 @@
     </XDFAXIS>
   </XDFFUNCTION>
   <XDFFLAG uniqueid="0x153F">
-    <title>Sensor, lambda, OBD disable, duty cycle monitoring</title>
+    <title>Sensor, lambda, OBD enable, duty cycle monitoring</title>
     <description>K_LA_OBD_FREIGABE bit 0</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="41" />
@@ -7012,7 +7012,7 @@
     <mask>0x01</mask>
   </XDFFLAG>
   <XDFFLAG uniqueid="0x140D">
-    <title>Sensor, lambda, OBD disable, cycle duration</title>
+    <title>Sensor, lambda, OBD enable, cycle duration</title>
     <description>K_LA_OBD_FREIGABE bit 1</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="41" />
@@ -7021,7 +7021,7 @@
     <mask>0x02</mask>
   </XDFFLAG>
   <XDFFLAG uniqueid="0x1A3C">
-    <title>Sensor, lambda, OBD disable, secondary lambda sensor diagnosis</title>
+    <title>Sensor, lambda, OBD enable, secondary lambda sensor diagnosis</title>
     <description>K_LA_OBD_FREIGABE bit 2</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="41" />
@@ -7030,7 +7030,7 @@
     <mask>0x04</mask>
   </XDFFLAG>
   <XDFFLAG uniqueid="0x1F6A">
-    <title>Sensor, lambda, OBD disable, trimming control bank 1</title>
+    <title>Sensor, lambda, OBD enable, trimming control bank 1</title>
     <description>K_LA_OBD_FREIGABE bit 3</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="41" />
@@ -7039,7 +7039,7 @@
     <mask>0x08</mask>
   </XDFFLAG>
   <XDFFLAG uniqueid="0x2201">
-    <title>Sensor, lambda, OBD disable, trimming control bank 2</title>
+    <title>Sensor, lambda, OBD enable, trimming control bank 2</title>
     <description>K_LA_OBD_FREIGABE bit 4</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="41" />
@@ -7048,7 +7048,7 @@
     <mask>0x10</mask>
   </XDFFLAG>
   <XDFFLAG uniqueid="0x6B15">
-    <title>Sensor, lambda, OBD disable, bit 5 (unknown)</title>
+    <title>Sensor, lambda, OBD enable, bit 5 (unknown)</title>
     <description>K_LA_OBD_FREIGABE bit 5</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="41" />
@@ -7057,7 +7057,7 @@
     <mask>0x20</mask>
   </XDFFLAG>
   <XDFFLAG uniqueid="0x25FC">
-    <title>Sensor, lambda, OBD disable, cat conversion</title>
+    <title>Sensor, lambda, OBD enable, cat conversion</title>
     <description>K_LA_OBD_FREIGABE bit 6</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="41" />
@@ -7066,7 +7066,7 @@
     <mask>0x40</mask>
   </XDFFLAG>
   <XDFFLAG uniqueid="0x292C">
-    <title>Sensor, lambda, OBD disable, jump time monitoring</title>
+    <title>Sensor, lambda, OBD enable, jump time monitoring</title>
     <description>K_LA_OBD_FREIGABE bit 7</description>
     <CATEGORYMEM index="0" category="91" />
     <CATEGORYMEM index="1" category="41" />
